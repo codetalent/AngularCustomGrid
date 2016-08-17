@@ -1,0 +1,19 @@
+<table bordercolordark="#F3D3D3"  cellpadding="0px" border="1px" >
+<thead>
+	<td ng-repeat="col in cols">{{col.title}}</td>
+</thead>
+
+<tr ng-repeat="(indexX,row) in rows">
+    <td ng-repeat="col in cols">
+    <span ng-if="col.title=='Edit'" >
+        <button ng-click="update(row,indexX)" ng-hide="savecolumn[indexX]" value="Update">Update</button>
+         <button ng-click="save(row,indexX)" ng-show="savecolumn[indexX]" value="">Save</button>
+    </span>
+    <span ng-if="col.title!='Edit'" >
+        <p ng-hide="editcolumn[indexX]">{{row[col.field]}}</p>
+        <p><input type="text" ng-show="editcolumn[indexX]" ng-model="row[col.field]"></p>
+    </span>
+    </td>
+</tr>
+
+</table>
