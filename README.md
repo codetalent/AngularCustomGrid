@@ -5,7 +5,7 @@ AngularJS directive for the Custom Grid. This software aims to easily create gri
 Getting started/How to use it
 
 Following directive you can use for create your Grid.
-
+```html
 <group-table-record resource='Customers_JSON.php'>
     <group-columns>
                 <group-column title="Name" field="Name"></group-column>
@@ -15,3 +15,9 @@ Following directive you can use for create your Grid.
         <group editor-inline></group>
 </group-table-record>
 
+```
+where **resource** is attribute to pass your json url of file.
+
+-title : you can change its value by your heading title.
+
+-field : pass you field value by matching to json data field
