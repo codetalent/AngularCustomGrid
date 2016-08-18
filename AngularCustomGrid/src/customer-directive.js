@@ -86,7 +86,7 @@ app.directive("editorInline",function($compile, $templateCache){
         link: function(scope,ele,attr,grptblController){
            // console.log("hereeee");
             grptblController.seteditor({
-                title : "Edit",
+                title : "Action",
                 field : ""
             });
             scope.editcolumn ={};
@@ -102,6 +102,21 @@ app.directive("editorInline",function($compile, $templateCache){
                     scope.editcolumn[id] = false;
                     scope.savecolumn[id] = false;
                 };
+            scope.orderByField = 'Name';
+            scope.reverseSort = false;
+            scope.sortbyname = function(ordervy){
+           console.log("sdfsdfdsf");
+           scope.orderByField = ordervy;
+               if( scope.reverseSort === false ) {
+
+                   scope.reverseSort = true;
+                } else {
+                  scope.reverseSort = false;
+                }
+              console.log(scope.orderByField,scope.reverseSort);
+  
+            }
+            
             
         }
       }
