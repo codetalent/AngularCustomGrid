@@ -1,15 +1,28 @@
-<table bordercolordark="#F3D3D3"  cellpadding="0px" border="1px" >
+<table class="table table-bordered" style="width: 90%; margin-left:20px;margin-top:20px;margin-right:20px;" >
 <thead>
-	<td ng-repeat="col in cols">{{col.title}}</td>
+<tr>
+	<th ng-repeat="col in cols">
+       <span ng-if="col.title=='Action'" >{{col.title}}  </span>
+            <a ng-if="col.title!='Action'"  href="#" ng-click="sortbyname(col.title)">
+        
+                {{col.title}}  
+                <span ng-show="orderByField == col.title">
+                    <span ng-show="!reverseSort">^</span>
+                    <span ng-show="reverseSort">v</span>
+                </span>
+              </a>
+       
+    </th>
+    </tr>
 </thead>
 
-<tr ng-repeat="(indexX,row) in rows">
+<tr ng-repeat="(indexX,row) in rows | orderBy:orderByField:reverseSort">
     <td ng-repeat="col in cols">
-    <span ng-if="col.title=='Edit'" >
-        <button ng-click="update(row,indexX)" ng-hide="savecolumn[indexX]" value="Update">Update</button>
-         <button ng-click="save(row,indexX)" ng-show="savecolumn[indexX]" value="">Save</button>
+    <span ng-if="col.title=='Action'" >
+        <button ng-click="update(row,indexX)" ng-hide="savecolumn[indexX]" class="btn btn-primary btn-sm">Update</button>
+         <button ng-click="save(row,indexX)" ng-show="savecolumn[indexX]" class="btn btn-info btn-sm">Save</button>
     </span>
-    <span ng-if="col.title!='Edit'" >
+    <span ng-if="col.title!='Action'" >
         <p ng-hide="editcolumn[indexX]">{{row[col.field]}}</p>
         <p><input type="text" ng-show="editcolumn[indexX]" ng-model="row[col.field]"></p>
     </span>

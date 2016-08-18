@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
+<link rel="stylesheet" href="include/bootstrap.min.css" >
 <script src="src/angular.min.js"></script>
 <script src="src/customer-directive.js"></script>
 </head>
 
 <body>
-
-<div ng-app="myApp" ng-controller="myCtrl">
+<h1>Angular Grid</h1>
+<div ng-app="myApp" ng-controller="myCtrl" style="width: 100%;">
   
  <group-table-record resource="data/Customers_JSON.php">
      <group-columns>
