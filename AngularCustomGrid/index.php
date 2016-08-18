@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="include/bootstrap.min.css" >
+<title>Angular Custom Simple Grid</title>
+<link rel="stylesheet" href="src/bootstrap.min.css" >
 <script src="src/angular.min.js"></script>
 <script src="src/customer-directive.js"></script>
 </head>
